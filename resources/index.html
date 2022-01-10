@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NeutralinoJs sample app</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="neutralinoapp">
+      <h1>NeutralinoJs</h1>
+      <div id="statusBar"></div>
+      <br/>
+      <section class="buttons">
+        <label for="bundleId">Bundle ID</label>
+        <input id="bundleId" type="text" oninput="setBundleId(event)" />
+        <button onclick="sendNotification()">Send notification</button>
+        <button onclick="updateDevices()">Reload devices</button>
+      </section>
+      <section class="json">
+        <textarea id="notificationPayload" oninput="setPayload(event)"></textarea>
+      </section>
+      <section class="devices" aria-label="available devices">
+        <div class="devices-list">
+          <h3>Shutdown</h3>
+          <ul id="shutdownDevices"></ul>
+        </div>
+        <div class="devices-list">
+          <h3>Booted</h3>
+          <ul id="bootedDevices"></ul>
+        </div>
+      </section>
+    </div>
+    <!-- Neutralino.js client. This file is gitignored,
+        because `neu update` typically downloads it.
+        Avoid copy-pasting it.
+        -->
+    <script src="js/neutralino.js"></script>
+    <!-- Your app's source files -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

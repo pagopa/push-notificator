@@ -1,0 +1,71 @@
+#neutralinoapp {
+    text-align: center;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+#neutralinoapp h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+#neutralinoapp > div {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+html, body, #neutralinoapp {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.devices, .json, .buttons {
+  display: flex;
+  flex-direction: row;
+  background: green;
+}
+
+.devices, .json {
+  flex: 1 1 auto;
+}
+
+.buttons {
+  height: 40px;
+}
+
+#notificationPayload {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.devices-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
+  height: 200px;
+  background: lightgreen;
+}
+
+#bootedDevices, #shutdownDevices {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
+  height: 200px;
+  background: yellow;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+ul, ul > li {
+  font-size: 14px;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+ul > li:hover {
+  background-color: grey;
+}
