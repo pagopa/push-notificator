@@ -1,9 +1,18 @@
-# neutralinojs-minimal
-The simplest template for a Neutralinojs app. It's possible to use your favorite frontend framework using the following steps.
+# Push Notificator
+A utility that sends push notifications to your emulator. Supporting IOS only for now.
 
-- Create a new project using your favorite frontend framework. (Eg: `ng new --directory .`)
-- Make the frontend framework's build path and Neutralino config's `url`, `resourcesPath` the same.
-- Build with the correct base href.
+## Contributing
+
+### Setup
+
+1. install [Neutralinojs CLI](https://neutralino.js.org/docs/getting-started/your-first-neutralinojs-app#step-0-installing-neu-cli)
+2. in the project folder, execute `neu run` to run the app in dev mode
+
+### Development
+
+* files live under `/resources`
+* please use just vanilla Javascript, CSS, HTML for the time being
+
 
 # Icon credits
 
