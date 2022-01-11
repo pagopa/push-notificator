@@ -2,23 +2,27 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>NeutralinoJs sample app</title>
+    <title>Push Notificator v0.1</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div id="neutralinoapp">
-      <h1>NeutralinoJs</h1>
-      <div id="statusBar"></div>
-      <br/>
+      <h1>Push Notificator for IOS</h1>
+      <header><p id="statusBar"></p></header>
+
       <section class="buttons">
-        <label for="bundleId">Bundle ID</label>
-        <input id="bundleId" type="text" oninput="setBundleId(event)" />
+        <div class="input">
+          <label for="bundleId">Bundle ID</label>
+          <input id="bundleId" type="text" oninput="setBundleId(event)" />
+        </div>
         <button onclick="sendNotification()">Send notification</button>
         <button onclick="updateDevices()">Reload devices</button>
       </section>
+
       <section class="json">
         <textarea id="notificationPayload" oninput="setPayload(event)"></textarea>
       </section>
+
       <section class="devices" aria-label="available devices">
         <div class="devices-list">
           <h3>Shutdown</h3>
@@ -29,6 +33,7 @@
           <ul id="bootedDevices"></ul>
         </div>
       </section>
+
     </div>
     <!-- Neutralino.js client. This file is gitignored,
         because `neu update` typically downloads it.

@@ -81,35 +81,49 @@ function selectDevice(event, uuid) {
 }
 
 function setBundleId(event) {
-    target.bundleId = event.target.value;
+    target.bundleId = event.target.value || null;
 }
 
 function setPayload(event) {
     try {
-        const nextPayload = event.target.value;
-        target.payload = JSON.parse(nextPayload);
+        const nextPayload = JSON.parse(event.target.value);
+        target.payload = nextPayload ? nextPayload : null;
     } catch (e) {
         console.log(e);
+        target.payload = null;
     }
 }
 
 function sendNotification() {
     const command = target.getCommand();
-    console.log('command', command);
     if (command) {
         Neutralino.os
             .execCommand(command)
             .then(({ exitCode, stdErr }) => {
                 if (exitCode !== 0) {
                     document.getElementById('statusBar').innerHTML = stdErr;
+                    document.getElementById('statusBar').classList = ['error'];
                 } else {
                     document.getElementById('statusBar').innerHTML = 'done';
+                    document.getElementById('statusBar').classList = ['ok'];
                 }
             })
             .catch((error) => {
                 console.error(error);
-                Neutralino.os.showNotification('Oops :/', error, 'ERROR');
             });
+    } else {
+        const errors = [];
+        if (target.payload === null) {
+            errors.push('invalid JSON');
+        }
+        if (target.bundleId === null) {
+            errors.push('must specify bundle ID');
+        }
+        if (target.uuid === null) {
+            errors.push('must select a device');
+        }
+        document.getElementById('statusBar').innerHTML = `Error: ${errors.join(', ')}`;
+        document.getElementById('statusBar').classList = ['error'];
     }
 }
 
@@ -167,4 +181,4 @@ document.getElementById('notificationPayload').value = JSON.stringify(
     undefined,
     2,
 );
-// setInterval(updateDevices, 2000);
+setInterval(updateDevices, 2000);
