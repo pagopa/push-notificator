@@ -25,6 +25,7 @@ Please check also [our internal HOWTO](https://pagopa.atlassian.net/wiki/spaces/
 * please use just vanilla Javascript, CSS, HTML for the time being
 
 
-# Icon credits
+# Credits
 
+- project bootstrapped via [neutralinojs/neutralinojs-minimal)[https://github.com/neutralinojs/neutralinojs-minimal)
 - `trayIcon.png` - Made by [Freepik](https://www.freepik.com) and downloaded from [Flaticon](https://www.flaticon.com)
