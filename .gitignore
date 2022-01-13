@@ -13,3 +13,9 @@ neutralino.js
 *.log
 
 .tmp
+
+# JetBrains/Webstorm
+.idea/*
+
+# Mac OS
+.DS_Store
