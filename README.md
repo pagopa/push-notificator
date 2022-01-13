@@ -17,7 +17,10 @@ Please check also [our internal HOWTO](https://pagopa.atlassian.net/wiki/spaces/
 ### Setup
 
 1. install [Neutralinojs CLI](https://neutralino.js.org/docs/getting-started/your-first-neutralinojs-app#step-0-installing-neu-cli)
-2. in the project folder, execute `neu run` to run the app in dev mode
+   1. `npm install -g @neutralinojs/neu`
+2. in the project folder, execute 
+   1. `neu update` only the first time
+   2. `neu run` to execute the app
 
 ### Development
 
