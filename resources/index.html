@@ -15,11 +15,21 @@
           <label for="bundleId">Bundle ID</label>
           <input id="bundleId" type="text" oninput="setBundleId(event)" />
         </div>
-        <button onclick="sendNotification()">Send notification</button>
-        <button onclick="updateDevices()">Reload devices</button>
+        <div class="targetDevice">
+          <label for="targetDeviceLabel">Target Device</label>
+          <input type="text" id="targetDeviceLabel" value="---" readonly/>
+        </div>
       </section>
 
-      <section class="json">
+      <section class="buttons">
+        <div>
+          <button onclick="sendNotification()" class="button">Send notification</button>
+          <button onclick="updateDevices()"  class="button">Reload devices</button>
+        </div>
+      </section>
+
+      <section class="json input">
+        <label for="notificationPayload">Notification payload</label>
         <textarea id="notificationPayload" oninput="setPayload(event)"></textarea>
       </section>
 
