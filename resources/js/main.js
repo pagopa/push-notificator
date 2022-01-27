@@ -76,13 +76,11 @@ function updateDevices() {
         .catch((e) => console.error(e));
 }
 
-function displaySelectedDevice(uuid){
-    document.getElementById('targetDeviceLabel').value = document.getElementById(uuid).innerHTML;
-}
 
 function selectDevice(event, uuid) {
     target.uuid = uuid;
-    displaySelectedDevice(uuid);
+    // show the selected device
+    document.getElementById('targetDeviceLabel').value = document.getElementById(uuid).innerHTML;
 }
 
 function setBundleId(event) {
