@@ -76,8 +76,11 @@ function updateDevices() {
         .catch((e) => console.error(e));
 }
 
+
 function selectDevice(event, uuid) {
     target.uuid = uuid;
+    // show the selected device
+    document.getElementById('targetDeviceLabel').value = document.getElementById(uuid).innerHTML;
 }
 
 function setBundleId(event) {

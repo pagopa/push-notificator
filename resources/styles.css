@@ -10,91 +10,119 @@
     font-weight: normal;
 }
 
-h1,h2,h3,h4,h5,p,li {
-  color: #001219
+h1, h2, h3, h4, h5, p, li {
+    color: #001219
 }
 
 
 button {
-  color: #001219;
+    color: #001219;
 }
 
 html, body, #neutralinoapp {
-  background-color: #e9d8a6;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 100%;
-  height: 100%;
-  overflow: hidden;
+    background-color: #e9d8a6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .devices, .json, .buttons {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .devices, .json {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
 #notificationPayload, #bundleId {
-  font-family: Menlo
+    font-family: Menlo
 }
 
 label[for="bundleId"] {
+    padding: 4px 12px;
+}
+
+label[for="targetDeviceLabel"] {
   padding: 4px 12px;
 }
 
+label[for="notificationPayload"] {
+    padding: 4px 12px;
+}
+
 .input {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .buttons {
-  margin-bottom: 14px;
+    margin-bottom: 14px;
+}
+
+.button {
+    padding: 10px;
+    border: 1px solid #4d4d4d;
+    border-radius: 6px;
+    background: aliceblue;
+    min-width: 110px;
 }
 
 #notificationPayload {
-  display: flex;
-  flex: 1 1 auto;
+    display: flex;
+    flex: 1 1 auto;
 }
 
 .devices-list {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
 }
 
 #bootedDevices, #shutdownDevices {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: white;
-  max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: white;
+    max-height: 300px;
+}
+
+.targetDevice {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+#targetDeviceLabel {
+
+    background: white;
 }
 
 ul, ul > li {
-  font-size: 14px;
-  display: block;
-  padding: 0;
-  margin: 0;
+    font-size: 14px;
+    display: block;
+    padding: 0;
+    margin: 0;
 }
+
 ul > li:hover {
-  background-color: #94d2bd;
+    background-color: #94d2bd;
 }
 
 #statusBar {
-  text-align: left;
-  font-family: monospace;
+    text-align: left;
+    font-family: monospace;
 }
 
 .error {
-  background-color: #ae2012;
-  color: white;
-  padding: 14px;
+    background-color: #ae2012;
+    color: white;
+    padding: 14px;
 }
 
 
