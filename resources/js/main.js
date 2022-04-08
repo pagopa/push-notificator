@@ -91,8 +91,8 @@ function setBundleId(event) {
 
 function setPayload(value) {
     try {
-        // replace back double quotes into quotes ” -> "
-        // it seems to be auto-replaced while writing in the text area in window mode
+        // force the replacement of back double quotes into quotes ” -> "
+        // it seems to be auto-replaced while writing in the text area (only in window mode)
         const replaced = value.replaceAll(String.fromCharCode(8220),'"').replaceAll(String.fromCharCode(8221),'"');
         const nextPayload = JSON.parse(replaced);
         target.payload = nextPayload ?? null;
