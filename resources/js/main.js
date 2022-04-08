@@ -5,6 +5,7 @@ const DEFAULT_PAYLOAD = {
         sound: 'default',
         badge: 1,
     },
+    message_id: '00000000000000000000000000'
 };
 
 class PNTarget {
@@ -87,17 +88,21 @@ function setBundleId(event) {
     target.bundleId = event.target.value || null;
 }
 
-function setPayload(event) {
+
+function setPayload(value) {
     try {
-        const nextPayload = JSON.parse(event.target.value);
-        target.payload = nextPayload ? nextPayload : null;
+        // replace back double quotes into quotes ” -> "
+        // it seems to be auto-replaced while writing in the text area in window mode
+        const replaced = value.replaceAll(String.fromCharCode(8220),'"').replaceAll(String.fromCharCode(8221),'"');
+        const nextPayload = JSON.parse(replaced);
+        target.payload = nextPayload ?? null;
     } catch (e) {
-        console.log(e);
         target.payload = null;
     }
 }
 
 function sendNotification() {
+    setPayload(document.getElementById('notificationPayload').value);
     const command = target.getCommand();
     if (command) {
         Neutralino.os
@@ -125,13 +130,13 @@ function sendNotification() {
         if (target.uuid === null) {
             errors.push('must select a device');
         }
-        document.getElementById('statusBar').innerHTML = `Error: ${errors.join(', ')}`;
+        document.getElementById('statusBar').innerHTML = `Errors ${errors.map(e => `<br/>- ${e}`).join("")}`;
         document.getElementById('statusBar').classList = ['error'];
     }
 }
 
 function setTray() {
-    if (NL_MODE != 'window') {
+    if (NL_MODE !== 'window') {
         console.log('INFO: Tray menu is only available in the window mode.');
         return;
     }
@@ -172,7 +177,7 @@ Neutralino.window.setSize({
 Neutralino.events.on('trayMenuItemClicked', onTrayMenuItemClicked);
 Neutralino.events.on('windowClose', onWindowClose);
 
-if (NL_OS != 'Darwin') {
+if (NL_OS !== 'Darwin') {
     // TODO: Fix https://github.com/neutralinojs/neutralinojs/issues/615
     setTray();
 }
